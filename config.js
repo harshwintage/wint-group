@@ -21,7 +21,7 @@ const CONFIG = {
   HERO_HEADLINE: "Your Next Bestseller Is Already Made",
   HERO_SUBTEXT: "We manufacture dresses, blazers, co-ords, jumpsuits, suits & more — and ship to boutiques worldwide with no minimum order quantity.",
   // Hero background image (optional). Leave empty for gradient-only.
-  HERO_IMAGE: "",
+  HERO_IMAGE: "assets/hero.jpg",
 
   // ── HOW MANY IMAGES PER SLIDER ────────────────────────────────
   SLIDER_PREVIEW_COUNT: 10,    // images shown in the slider on main page
