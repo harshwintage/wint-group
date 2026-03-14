@@ -21,7 +21,7 @@ const CONFIG = {
 
   // ── FORM BACKGROUND IMAGE (optional) ──────────────────────────
   FORM_IMAGE: "assets/form-bg.jpg",
-
+  CTA_HERO: "Get Started",
   // ── HOW MANY IMAGES PER SLIDER ────────────────────────────────
   SLIDER_PREVIEW_COUNT: 10,
   GRID_COLUMNS_MOBILE: 3,
