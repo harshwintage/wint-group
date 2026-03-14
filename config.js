@@ -113,10 +113,10 @@ const CONFIG = {
 
   // ── WHY US SECTION ────────────────────────────────────────────
   WHY_US: [
-    { icon: "📦", title: "No Minimum Order Quantity", text: "Order what sells. We have a minimum order value — not a minimum quantity. Test styles risk-free." },
-    { icon: "✈️", title: "8–20 Day Delivery", text: "From our production floor to your boutique in 8 to 20 days. Restock fast, keep shelves fresh." },
+    { icon: "📦", title: "No Minimum Order Quantity", text: "Order what sells. We have a minimum order value of 100$— not a minimum quantity. Test styles risk-free." },
+    { icon: "✈️", title: "8–20 Day Delivery", text: "From our production floor to your boutique in 12 to 20 days. Restock fast, keep shelves fresh." },
     { icon: "💰", title: "Duties & Taxes Included", text: "The price you see is the price you pay. No surprise customs charges on delivery." },
-    { icon: "🛒", title: "Order Through Faire", text: "We're on Faire — net-60 terms, free returns on first orders, and a flow you already know." }
+    { icon: "🛒", title: "Order Direct or Through Faire", text: "Extra 10% off on direct order" }
   ],
 
   // ── TRUST LINE ────────────────────────────────────────────────
@@ -124,8 +124,8 @@ const CONFIG = {
 
   // ── FOOTER LINKS ──────────────────────────────────────────────
   FOOTER_LINKS: [
-    { label: "Faire Store", url: "#" },
-    { label: "Instagram", url: "#" },
-    { label: "Facebook", url: "#" }
+    { label: "Faire Store", url: "https://indophilia.faire.com" },
+    { label: "Instagram", url: "https://www.instagram.com/wintagewholesale" },
+    { label: "Facebook", url: "https://www.facebook.com/wintagewholesale" }
   ]
 };
