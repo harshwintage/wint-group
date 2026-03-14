@@ -58,6 +58,14 @@
         .lb.open{display:flex}
         .lb img{max-width:92vw;max-height:92vh;object-fit:contain;border-radius:6px}
         .lb-x{position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+        /* ── STICKY CTA ── */
+        .sticky-cta{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:90}
+        .sticky-cta a{display:flex;align-items:center;gap:8px;padding:14px 28px;border-radius:100px;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:.84rem;font-weight:600;text-decoration:none;box-shadow:0 8px 32px rgba(0,0,0,.2);transition:background .2s,transform .15s;letter-spacing:.02em}
+        .sticky-cta a:hover{background:#2a2a2a;transform:scale(1.03)}
+        .sticky-cta .pulse{width:8px;height:8px;border-radius:50%;background:var(--warm);animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+        @media(max-width:768px){.sticky-cta{bottom:16px}.sticky-cta a{padding:12px 22px;font-size:.8rem}}
     </style>
 </head>
 <body>
@@ -75,6 +83,11 @@
 <div class="cta-bar" id="ctaBar" style="display:none">
     <p>Interested in stocking these? Let's talk.</p>
     <a href="index.html#form" class="btn">Express Interest →</a>
+</div>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+    <a href="index.html#form"><span class="pulse"></span> Express Interest</a>
 </div>
 
 <div class="lb" id="lb"><button class="lb-x" id="lbx">&times;</button><img id="lbi" src="" alt=""></div>
