@@ -7,21 +7,24 @@ const CONFIG = {
 
   // ── META PIXEL ────────────────────────────────────────────────
   // Get this from Facebook Ads Manager → Events Manager → Pixel
-  META_PIXEL_ID: "1597135191493446",
+  META_PIXEL_ID: "YOUR_PIXEL_ID",
 
   // ── FORM ENDPOINT ─────────────────────────────────────────────
   // Google Apps Script Web App URL (see SETUP.md for instructions)
-  FORM_ENDPOINT: "https://script.google.com/macros/s/AKfycbxAEXpMXiJ8_bRWLvFdqxc_aJTsreD__2DILpR1ycNLXjqPMNGH1_MGjz9UPs4y4A15/exec",
+  FORM_ENDPOINT: "YOUR_GOOGLE_SCRIPT_URL",
 
   // ── LOGO ──────────────────────────────────────────────────────
   // Path to your logo image. Leave empty "" to show text "Wint.Group"
-  LOGO_URL: "assets/logo.png",
+  LOGO_URL: "",
 
   // ── HERO ──────────────────────────────────────────────────────
-  HERO_HEADLINE: "Wholesale That Actually Works for Boutiques",
-  HERO_SUBTEXT: "No minimum quantity. 8–20 day delivery. Dresses, Blazers, Tops & more. Just pick what you love and we'll handle the rest.",
+  HERO_HEADLINE: "Your Next Bestseller Is Already Made",
+  HERO_SUBTEXT: "We manufacture dresses, blazers, co-ords, jumpsuits, suits & more — and ship to boutiques worldwide with no minimum order quantity.",
   // Hero background image (optional). Leave empty for gradient-only.
-  HERO_IMAGE: "assets/hero.jpg",
+  HERO_IMAGE: "",
+
+  // Form section background image (optional). Leave empty for solid dark.
+  FORM_IMAGE: "",
 
   // ── HOW MANY IMAGES PER SLIDER ────────────────────────────────
   SLIDER_PREVIEW_COUNT: 10,    // images shown in the slider on main page
@@ -113,10 +116,10 @@ const CONFIG = {
 
   // ── WHY US SECTION ────────────────────────────────────────────
   WHY_US: [
-    { icon: "📦", title: "No Minimum Order Quantity", text: "Order what sells. We have a minimum order value of 100$— not a minimum quantity. Test styles risk-free." },
-    { icon: "✈️", title: "8–20 Day Delivery", text: "From our production floor to your boutique in 12 to 20 days. Restock fast, keep shelves fresh." },
+    { icon: "📦", title: "No Minimum Order Quantity", text: "Order what sells. We have a minimum order value — not a minimum quantity. Test styles risk-free." },
+    { icon: "✈️", title: "8–20 Day Delivery", text: "From our production floor to your boutique in 8 to 20 days. Restock fast, keep shelves fresh." },
     { icon: "💰", title: "Duties & Taxes Included", text: "The price you see is the price you pay. No surprise customs charges on delivery." },
-    { icon: "🛒", title: "Order Direct or Through Faire", text: "Extra 10% off on direct order" }
+    { icon: "🛒", title: "Order Through Faire", text: "We're on Faire — net-60 terms, free returns on first orders, and a flow you already know." }
   ],
 
   // ── TRUST LINE ────────────────────────────────────────────────
@@ -124,8 +127,8 @@ const CONFIG = {
 
   // ── FOOTER LINKS ──────────────────────────────────────────────
   FOOTER_LINKS: [
-    { label: "Faire Store", url: "https://indophilia.faire.com" },
-    { label: "Instagram", url: "https://www.instagram.com/wintagewholesale" },
-    { label: "Facebook", url: "https://www.facebook.com/wintagewholesale" }
+    { label: "Faire Store", url: "#" },
+    { label: "Instagram", url: "#" },
+    { label: "Facebook", url: "#" }
   ]
 };
