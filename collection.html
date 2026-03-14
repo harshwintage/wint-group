@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection — Wint Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="config.js"></script>
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --ink:#111;--paper:#f8f7f4;--cream:#efece6;--warm:#b8956a;
+            --warm-dk:#96754d;--muted:#8a8378;--muted-lt:#b5aea5;
+            --border:#ddd8cf;--white:#fff;
+            --serif:'Playfair Display',Georgia,serif;
+            --sans:'Sora',system-ui,sans-serif;
+        }
+        body{font-family:var(--sans);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+
+        /* ── HEADER ── */
+        .head{padding:32px 28px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(248,247,244,.92);backdrop-filter:blur(12px);z-index:50}
+        .head a{text-decoration:none;color:var(--muted);font-size:.82rem;font-weight:500;transition:color .2s}
+        .head a:hover{color:var(--ink)}
+        .head h1{font-family:var(--serif);font-size:1.4rem;font-weight:500;letter-spacing:-.01em}
+        .head .ct{font-size:.75rem;color:var(--muted-lt)}
+
+        /* ── GRID ── */
+        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px;padding:6px}
+        .grid-card{aspect-ratio:3/4;overflow:hidden;border-radius:4px;cursor:pointer;background:var(--cream);position:relative}
+        .grid-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+        .grid-card:hover img{transform:scale(1.03)}
+
+        /* 3 columns on mobile */
+        @media(max-width:768px){
+            .grid{grid-template-columns:repeat(3,1fr);gap:3px;padding:3px}
+            .head{padding:20px 16px 16px}
+            .head h1{font-size:1.1rem}
+        }
+
+        /* ── LOADING ── */
+        .loading{text-align:center;padding:80px 0;color:var(--muted);font-size:.88rem}
+        .loading .sp{width:28px;height:28px;border:2px solid var(--border);border-top-color:var(--warm);border-radius:50%;animation:spin .6s linear infinite;margin:0 auto 14px}
+        @keyframes spin{to{transform:rotate(360deg)}}
+
+        .empty{text-align:center;padding:80px 28px;color:var(--muted)}
+        .empty a{color:var(--ink)}
+
+        /* ── CTA BAR ── */
+        .cta-bar{text-align:center;padding:40px 28px;background:var(--cream)}
+        .cta-bar p{font-size:.9rem;color:var(--muted);margin-bottom:14px}
+        .btn{display:inline-flex;align-items:center;padding:12px 24px;border-radius:7px;font-family:var(--sans);font-size:.84rem;font-weight:500;text-decoration:none;background:var(--ink);color:var(--paper);transition:background .2s}
+        .btn:hover{background:#2a2a2a}
+
+        /* ── LIGHTBOX ── */
+        .lb{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.9);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;cursor:zoom-out}
+        .lb.open{display:flex}
+        .lb img{max-width:92vw;max-height:92vh;object-fit:contain;border-radius:6px}
+        .lb-x{position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    </style>
+</head>
+<body>
+
+<div class="head">
+    <a href="index.html">← Back</a>
+    <h1 id="pageTitle">Loading...</h1>
+    <span class="ct" id="pageCount"></span>
+</div>
+
+<div class="loading" id="loading"><div class="sp"></div>Loading collection...</div>
+<div class="grid" id="grid" style="display:none"></div>
+<div class="empty" id="empty" style="display:none">No products found. <a href="index.html">Go back</a></div>
+
+<div class="cta-bar" id="ctaBar" style="display:none">
+    <p>Interested in stocking these? Let's talk.</p>
+    <a href="index.html#form" class="btn">Express Interest →</a>
+</div>
+
+<div class="lb" id="lb"><button class="lb-x" id="lbx">&times;</button><img id="lbi" src="" alt=""></div>
+
+<script>
+// ── Meta Pixel ──
+(function(){
+    if(!CONFIG.META_PIXEL_ID||CONFIG.META_PIXEL_ID==='YOUR_PIXEL_ID')return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',CONFIG.META_PIXEL_ID);
+    fbq('track','PageView');
+})();
+function trackEvent(n,d){if(typeof fbq==='function')fbq('track',n,d||{})}
+
+// ── Find slider config from URL ──
+const params=new URLSearchParams(window.location.search);
+const slug=params.get('c');
+const allSliders=[...CONFIG.SLIDERS_WOMEN,...CONFIG.SLIDERS_MEN];
+const slider=allSliders.find(s=>s.slug===slug);
+
+if(!slider){
+    document.getElementById('loading').style.display='none';
+    document.getElementById('empty').style.display='block';
+    document.getElementById('pageTitle').textContent='Collection Not Found';
+}else{
+    document.getElementById('pageTitle').textContent=slider.name;
+    document.title=slider.name+' — Wint Group';
+
+    async function fetchCollection(source){
+        const[domain,...rest]=source.split('/collections/');
+        const handle=rest.join('/collections/');
+        const products=[];let page=1;
+        while(true){
+            try{
+                const r=await fetch('https://'+domain+'/collections/'+handle+'/products.json?limit=250&page='+page);
+                if(!r.ok)throw new Error(r.status);
+                const d=await r.json();
+                if(!d.products||!d.products.length)break;
+                d.products.forEach(p=>{
+                    if(p.images&&p.images.length)products.push({title:p.title,img:p.images[0].src});
+                });
+                if(d.products.length<250)break;
+                page++;
+            }catch(e){console.warn(e);break}
+        }
+        return products;
+    }
+
+    function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+    function thumbUrl(s){return s.replace(/(\.[a-z]+)(\?|$)/i,'_600x$1$2')}
+
+    Promise.all(slider.sources.map(fetchCollection)).then(results=>{
+        const products=shuffle(results.flat());
+        document.getElementById('loading').style.display='none';
+
+        if(!products.length){
+            document.getElementById('empty').style.display='block';
+            return;
+        }
+
+        const grid=document.getElementById('grid');
+        grid.style.display='grid';
+        document.getElementById('pageCount').textContent=products.length+' items';
+        document.getElementById('ctaBar').style.display='block';
+
+        products.forEach(p=>{
+            const card=document.createElement('div');card.className='grid-card';
+            card.innerHTML='<img src="'+thumbUrl(p.img)+'" alt="'+p.title+'" loading="lazy" onerror="this.src=\''+p.img+'\'">';
+            card.addEventListener('click',()=>openLb(p.img));
+            grid.appendChild(card);
+        });
+
+        trackEvent('ViewContent',{content_name:slider.name,content_category:'collection',value:products.length});
+    });
+}
+
+// ── Lightbox ──
+function openLb(s){document.getElementById('lbi').src=s;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
+function closeLb(){document.getElementById('lb').classList.remove('open');document.getElementById('lbi').src='';document.body.style.overflow=''}
+document.getElementById('lb').addEventListener('click',e=>{if(e.target!==document.getElementById('lbi'))closeLb()});
+document.getElementById('lbx').addEventListener('click',closeLb);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+</script>
+</body>
+</html>
