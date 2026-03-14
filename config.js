@@ -18,8 +18,8 @@ const CONFIG = {
   LOGO_URL: "assets/logo.png",
 
   // ── HERO ──────────────────────────────────────────────────────
-  HERO_HEADLINE: "Your Next Bestseller Is Already Made",
-  HERO_SUBTEXT: "We manufacture dresses, blazers, co-ords, jumpsuits, suits & more — and ship to boutiques worldwide with no minimum order quantity.",
+  HERO_HEADLINE: "Wholesale That Actually Works for Boutiques",
+  HERO_SUBTEXT: "No minimum quantity. 8–20 day delivery. Dresses, Blazers, Tops & more. Just pick what you love and we'll handle the rest.",
   // Hero background image (optional). Leave empty for gradient-only.
   HERO_IMAGE: "assets/hero.jpg",
 
