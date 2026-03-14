@@ -11,7 +11,7 @@ const CONFIG = {
 
   // ── FORM ENDPOINT ─────────────────────────────────────────────
   // Google Apps Script Web App URL (see SETUP.md for instructions)
-  FORM_ENDPOINT: "https://script.google.com/a/macros/wintage.in/s/AKfycbyKVrIFzoR1Nu5d4SUPtjsqgQiIL47_KH-87kIqztS9J8Rh6zqGLA_tmxuFVTIpSzdk/exec",
+  FORM_ENDPOINT: "https://script.google.com/macros/s/AKfycbw48sXS4J1-1rgI8py5fvM5ENrdfEi37rVJnhm2b6-cgIGeLXP5Njbhk8oeXs3vshis/exec",
 
   // ── LOGO ──────────────────────────────────────────────────────
   // Path to your logo image. Leave empty "" to show text "Wint.Group"
