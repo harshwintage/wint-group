@@ -13,8 +13,8 @@
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
-            --ink:#111;--paper:#f8f7f4;--cream:#efece6;--warm:#b8956a;
-            --warm-dk:#96754d;--warm-lt:#dcc8a8;--muted:#8a8378;
+            --ink:#111;--paper:#f8f7f4;--cream:#efece6;--warm:#e63228;
+            --warm-dk:#c4271e;--warm-lt:#dcc8a8;--muted:#8a8378;
             --muted-lt:#b5aea5;--border:#ddd8cf;--white:#fff;
             --serif:'Playfair Display',Georgia,serif;
             --sans:'Sora',system-ui,sans-serif;
@@ -40,17 +40,15 @@
 
         /* ── HERO ── */
         .hero{padding:140px 28px 72px;text-align:center;position:relative;overflow:hidden}
-        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,var(--warm-lt) 0%,transparent 55%);opacity:.22;pointer-events:none}
-        .hero-ey{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--warm-dk);margin-bottom:18px}
-        .hero-ey::before,.hero-ey::after{content:'';width:20px;height:1px;background:var(--warm)}
-        .hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.12;max-width:720px;margin:0 auto 18px;letter-spacing:-.02em;font-weight:500}
-        .hero p{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 32px;line-height:1.75;font-weight:300}
+        .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.55);pointer-events:none}
+        .hero-ey{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:18px;position:relative}
+        .hero-ey::before,.hero-ey::after{content:'';width:20px;height:1px;background:rgba(255,255,255,.4)}
+        .hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.12;max-width:720px;margin:0 auto 18px;letter-spacing:-.02em;font-weight:500;color:#fff;position:relative}
+        .hero p{font-size:1rem;color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 32px;line-height:1.75;font-weight:300;position:relative}
         .btn{display:inline-flex;align-items:center;gap:6px;padding:13px 28px;border-radius:7px;font-family:var(--sans);font-size:.86rem;font-weight:500;text-decoration:none;transition:all .25s;cursor:pointer;border:none}
         .btn-dk{background:var(--ink);color:var(--paper)}
         .btn-dk:hover{background:#2a2a2a;transform:translateY(-1px)}
-        .btn-ol{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
-        .btn-ol:hover{border-color:var(--ink)}
-        .hero-btn{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .hero-btn{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
 
         /* ── SECTION BASICS ── */
         section{padding:80px 28px}
@@ -104,7 +102,7 @@
         .fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.18)}
         .fg input:focus,.fg textarea:focus{border-color:var(--warm)}
         .fg .opt{font-size:.6rem;color:rgba(255,255,255,.2);font-weight:400;text-transform:none;letter-spacing:0}
-        .fsub{width:100%;padding:13px;background:var(--warm);color:var(--ink);border:none;border-radius:7px;font-family:var(--sans);font-size:.9rem;font-weight:600;cursor:pointer;transition:background .2s;margin-top:4px}
+        .fsub{width:100%;padding:13px;background:var(--warm);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.9rem;font-weight:600;cursor:pointer;transition:background .2s;margin-top:4px}
         .fsub:hover{background:var(--warm-dk);color:var(--paper)}
         .fnote{text-align:center;margin-top:12px;font-size:.7rem;color:rgba(255,255,255,.25)}
         .fok{display:none;text-align:center;padding:32px 0}
@@ -294,6 +292,14 @@ document.getElementById('trustLine').innerHTML='<strong>'+CONFIG.TRUST_TEXT+'</s
 if(CONFIG.LOGO_URL){
     const logo=document.getElementById('navLogo');
     logo.innerHTML='<img src="'+CONFIG.LOGO_URL+'" alt="Wint Group">';
+}
+
+// Hero background image
+if(CONFIG.HERO_IMAGE){
+    const hero=document.getElementById('hero');
+    hero.style.backgroundImage='url('+CONFIG.HERO_IMAGE+')';
+    hero.style.backgroundSize='cover';
+    hero.style.backgroundPosition='center';
 }
 
 // Form background image
