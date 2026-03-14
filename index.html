@@ -145,6 +145,15 @@
             .slider-sec{padding:36px 0 36px 20px}
         }
 
+        /* ── STICKY CTA ── */
+        .sticky-cta{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);z-index:90;opacity:0;transition:transform .4s ease,opacity .4s ease;pointer-events:none}
+        .sticky-cta.show{transform:translateX(-50%) translateY(0);opacity:1;pointer-events:auto}
+        .sticky-cta a{display:flex;align-items:center;gap:8px;padding:14px 28px;border-radius:100px;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:.84rem;font-weight:600;text-decoration:none;box-shadow:0 8px 32px rgba(0,0,0,.2);transition:background .2s,transform .15s;letter-spacing:.02em}
+        .sticky-cta a:hover{background:#2a2a2a;transform:scale(1.03)}
+        .sticky-cta .pulse{width:8px;height:8px;border-radius:50%;background:var(--warm);animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+        @media(max-width:768px){.sticky-cta{bottom:16px}.sticky-cta a{padding:12px 22px;font-size:.8rem}}
+
         /* ── FADE ── */
         .fade{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
         .fade.in{opacity:1;transform:translateY(0)}
@@ -244,6 +253,11 @@
     <div class="fl" id="footerLinks"></div>
     <p>&copy; 2026 Wint Group — Wintage Garments Pvt Ltd.</p>
 </footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+    <a href="#form"><span class="pulse"></span> Express Interest</a>
+</div>
 
 <!-- LIGHTBOX -->
 <div class="lb" id="lb"><button class="lb-x" id="lbx">&times;</button><img id="lbi" src="" alt=""></div>
@@ -412,7 +426,17 @@ document.getElementById('lbx').addEventListener('click',closeLb);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
 
 // ── Nav ──
-window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)});
+window.addEventListener('scroll',()=>{
+    document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);
+    // Sticky CTA: show after scrolling past hero, hide when form is visible
+    const sticky=document.getElementById('stickyCta');
+    const hero=document.getElementById('hero');
+    const form=document.getElementById('form');
+    const heroBottom=hero.getBoundingClientRect().bottom;
+    const formRect=form.getBoundingClientRect();
+    const formVisible=formRect.top<window.innerHeight&&formRect.bottom>0;
+    if(heroBottom<0&&!formVisible){sticky.classList.add('show')}else{sticky.classList.remove('show')}
+});
 document.getElementById('mobTog').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
 document.querySelectorAll('.nav-lnk a').forEach(a=>{a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'))});
 
