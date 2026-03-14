@@ -20,7 +20,7 @@ const CONFIG = {
   HERO_IMAGE: "assets/hero.jpg",
 
   // ── FORM BACKGROUND IMAGE (optional) ──────────────────────────
-  FORM_IMAGE: "",
+  FORM_IMAGE: "assets/form-bg.png",
 
   // ── HOW MANY IMAGES PER SLIDER ────────────────────────────────
   SLIDER_PREVIEW_COUNT: 10,
