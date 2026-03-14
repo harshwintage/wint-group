@@ -206,7 +206,7 @@
                 <div class="fg"><label>Boutique Name *</label><input type="text" name="boutique" placeholder="Your Boutique" required></div>
             </div>
             <div class="frow">
-                <div class="fg"><label>Website <span class="opt">(optional)</span></label><input type="url" name="website" placeholder="https://yourboutique.com"></div>
+                <div class="fg"><label>Website <span class="opt">(optional)</span></label><input type="text" name="website" placeholder="yourboutique.com"></div>
                 <div class="fg"><label>Instagram <span class="opt">(optional)</span></label><input type="text" name="instagram" placeholder="@yourboutique"></div>
             </div>
             <button type="submit" class="fsub" id="formBtn"></button>
@@ -450,19 +450,31 @@ document.getElementById('leadForm').addEventListener('submit',async e=>{
     const form=e.target;
     const data=Object.fromEntries(new FormData(form));
 
+    // Auto-prepend https:// to website if needed
+    if(data.website&&data.website.trim()!==''){
+        let w=data.website.trim();
+        if(!w.startsWith('http://') && !w.startsWith('https://')) w='https://'+w;
+        data.website=w;
+    }
+
     // Track Lead event
     trackEvent('Lead',{content_name:'form_submit'});
 
     // Send to Google Sheets
     if(CONFIG.FORM_ENDPOINT&&CONFIG.FORM_ENDPOINT!=='YOUR_GOOGLE_SCRIPT_URL'){
         try{
+            console.log('Submitting form to:',CONFIG.FORM_ENDPOINT);
+            console.log('Form data:',data);
             await fetch(CONFIG.FORM_ENDPOINT,{
                 method:'POST',
                 mode:'no-cors',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify(data)
             });
-        }catch(err){console.warn('Form submit error:',err)}
+            console.log('Form submitted successfully');
+        }catch(err){console.error('Form submit error:',err)}
+    }else{
+        console.warn('FORM_ENDPOINT not configured in config.js — form data not sent anywhere');
     }
 
     form.style.display='none';
