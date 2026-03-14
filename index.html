@@ -212,7 +212,7 @@
                 <div class="fg"><label>Instagram <span class="opt">(optional)</span></label><input type="text" name="instagram" placeholder="@yourboutique"></div>
             </div>
             <div class="fg full"><label>Comments <span class="opt">(optional)</span></label><textarea name="comments" placeholder="Tell us what you're looking for..." rows="3"></textarea></div>
-            <button type="submit" class="fsub" id="formBtn"></button>
+            <button type="submit" class="fsub">Send My Details</button>
             <div class="fnote">We'll reply within 24 hours. No spam, ever.</div>
         </form>
         <div class="fok" id="formOk"><h3>Thank you!</h3><p>We've received your details and will be in touch within 24 hours.</p></div>
@@ -275,8 +275,7 @@ function trackEvent(name,data){if(typeof fbq==='function')fbq('track',name,data|
 document.getElementById('heroH').textContent=CONFIG.HERO_HEADLINE;
 document.getElementById('heroP').textContent=CONFIG.HERO_SUBTEXT;
 document.getElementById('heroCta').textContent=CONFIG.CTA_HERO+' →';
-document.getElementById('navCta').textContent=CONFIG.CTA_HERO;
-document.getElementById('formBtn').textContent=CONFIG.CTA_FORM_SUBMIT;
+document.getElementById('formBtn').textContent='Send My Details';
 document.getElementById('trustLine').innerHTML='<strong>'+CONFIG.TRUST_TEXT+'</strong>';
 
 // Logo
