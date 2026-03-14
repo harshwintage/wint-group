@@ -7,7 +7,7 @@ const CONFIG = {
 
   // ── META PIXEL ────────────────────────────────────────────────
   // Get this from Facebook Ads Manager → Events Manager → Pixel
-  META_PIXEL_ID: "YOUR_PIXEL_ID",
+  META_PIXEL_ID: "1597135191493446",
 
   // ── FORM ENDPOINT ─────────────────────────────────────────────
   // Google Apps Script Web App URL (see SETUP.md for instructions)
