@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wint Group — Wholesale Garments for Boutiques | No MOQ</title>
+    <meta name="description" content="Wholesale dresses, blazers, co-ords, jumpsuits and more for boutiques. No minimum order quantity, 8-20 day delivery, duties included. Browse our full catalog.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--ink:#111;--paper:#f8f7f4;--cream:#efece6;--warm:#b8956a;--warm-dk:#96754d;--warm-lt:#dcc8a8;--muted:#8a8378;--muted-lt:#b5aea5;--border:#ddd8cf;--white:#fff;--serif:'Playfair Display',Georgia,serif;--sans:'Sora',system-ui,sans-serif;--r:10px}
+        html{scroll-behavior:smooth}
+        body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(248,247,244,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+        nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.05)}
+        .nav-in{max-width:1280px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{font-family:var(--serif);font-size:1.4rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;font-weight:600}
+        .nav-logo span{color:var(--warm)}
+        .nav-lnk{display:flex;gap:28px;align-items:center}
+        .nav-lnk a{text-decoration:none;color:var(--muted);font-size:.82rem;font-weight:500;letter-spacing:.03em;transition:color .2s}
+        .nav-lnk a:hover{color:var(--ink)}
+        .nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:9px 22px!important;border-radius:6px;transition:background .2s!important}
+        .nav-cta:hover{background:#333!important}
+        .mob-tog{display:none;background:none;border:none;cursor:pointer;padding:4px}
+        .mob-tog span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:.3s}
+
+        .hero{padding:150px 32px 80px;text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,var(--warm-lt) 0%,transparent 55%);opacity:.25;pointer-events:none}
+        .hero-ey{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--warm-dk);margin-bottom:20px}
+        .hero-ey::before,.hero-ey::after{content:'';width:24px;height:1px;background:var(--warm)}
+        .hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1.12;max-width:780px;margin:0 auto 20px;letter-spacing:-.02em;font-weight:500}
+        .hero p{font-size:1.05rem;color:var(--muted);max-width:540px;margin:0 auto 36px;line-height:1.75;font-weight:300}
+        .hero-btn{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:13px 28px;border-radius:7px;font-family:var(--sans);font-size:.88rem;font-weight:500;text-decoration:none;transition:all .25s;cursor:pointer;border:none}
+        .btn-dk{background:var(--ink);color:var(--paper)}
+        .btn-dk:hover{background:#2a2a2a;transform:translateY(-1px)}
+        .btn-ol{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
+        .btn-ol:hover{border-color:var(--ink)}
+
+        .stats{max-width:880px;margin:-10px auto 0;padding:0 32px;position:relative;z-index:2}
+        .stats-in{display:grid;grid-template-columns:repeat(4,1fr);background:var(--white);border:1px solid var(--border);border-radius:14px;padding:36px 12px;box-shadow:0 6px 36px rgba(0,0,0,.04)}
+        .stat{text-align:center;padding:0 12px;border-right:1px solid var(--border)}
+        .stat:last-child{border-right:none}
+        .stat-v{font-family:var(--serif);font-size:1.6rem;color:var(--ink);margin-bottom:2px}
+        .stat-l{font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+
+        section{padding:90px 32px}
+        .sh{text-align:center;max-width:580px;margin:0 auto 48px}
+        .sh h2{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:12px;letter-spacing:-.02em;font-weight:500}
+        .sh p{color:var(--muted);font-size:.95rem;font-weight:300;line-height:1.7}
+
+        .catalog{background:var(--cream)}
+        .fbar{max-width:1200px;margin:0 auto 40px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+        .fbtn{padding:8px 20px;border-radius:100px;border:1.5px solid var(--border);background:var(--white);font-family:var(--sans);font-size:.78rem;font-weight:500;color:var(--muted);cursor:pointer;transition:all .2s;letter-spacing:.02em}
+        .fbtn:hover{border-color:var(--muted);color:var(--ink)}
+        .fbtn.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+        .fbtn .ct{display:inline-block;margin-left:4px;font-size:.68rem;opacity:.6}
+
+        .pgrid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px}
+        .pcard{position:relative;overflow:hidden;border-radius:4px;background:var(--white);aspect-ratio:3/4;cursor:pointer;transition:transform .3s}
+        .pcard:hover{transform:scale(1.02);z-index:2}
+        .pcard img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .4s}
+        .pcard .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5) 0%,transparent 50%);opacity:0;transition:opacity .3s;pointer-events:none}
+        .pcard:hover .ov{opacity:1}
+        .pcard .tg{position:absolute;bottom:12px;left:12px;font-size:.68rem;font-weight:500;color:var(--paper);background:rgba(0,0,0,.4);backdrop-filter:blur(8px);padding:4px 10px;border-radius:4px;opacity:0;transform:translateY(6px);transition:all .3s;letter-spacing:.03em}
+        .pcard:hover .tg{opacity:1;transform:translateY(0)}
+        .pcard .bd{position:absolute;top:10px;right:10px;width:8px;height:8px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6)}
+        .bd.tt{background:#c96b8a}.bd.ip{background:#6a9fb5}.bd.wt{background:#b8956a}
+
+        .gload{text-align:center;padding:60px 0;color:var(--muted);font-size:.9rem}
+        .gload .sp{width:32px;height:32px;border:2.5px solid var(--border);border-top-color:var(--warm);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 16px}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        .pcount{text-align:center;margin-top:32px;font-size:.78rem;color:var(--muted-lt);letter-spacing:.04em}
+        .lmw{text-align:center;margin-top:32px}
+        .lmb{padding:12px 36px;border-radius:8px;border:1.5px solid var(--border);background:var(--white);font-family:var(--sans);font-size:.85rem;font-weight:500;color:var(--ink);cursor:pointer;transition:all .2s}
+        .lmb:hover{border-color:var(--ink)}.lmb:disabled{opacity:.4;cursor:default}
+
+        .wgrid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+        .wcard{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:36px 28px;transition:border-color .3s}
+        .wcard:hover{border-color:var(--warm)}
+        .wi{width:44px;height:44px;border-radius:10px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:18px}
+        .wcard h3{font-size:1rem;font-weight:600;margin-bottom:6px}
+        .wcard p{color:var(--muted);font-size:.85rem;line-height:1.65;font-weight:300}
+
+        .bsec{background:var(--cream)}
+        .bstrip{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .bcard{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:36px 24px;text-align:center;transition:border-color .3s}
+        .bcard:hover{border-color:var(--warm)}
+        .bcard h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:6px}
+        .bcard .bt{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--warm-dk);font-weight:600;margin-bottom:14px}
+        .bcard p{font-size:.82rem;color:var(--muted);line-height:1.6;font-weight:300}
+        .bcard a{display:inline-block;margin-top:14px;font-size:.8rem;color:var(--ink);font-weight:500;text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px;transition:border-color .2s}
+        .bcard a:hover{border-color:var(--ink)}
+
+        .contact{background:var(--ink);color:var(--paper)}
+        .contact .sh p{color:rgba(255,255,255,.5)}.contact .sh h2{color:var(--paper)}
+        .fwrap{max-width:520px;margin:0 auto}
+        .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        .fg{margin-bottom:14px}
+        .fg label{display:block;font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;color:rgba(255,255,255,.4)}
+        .fg input{width:100%;padding:11px 14px;border-radius:7px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:var(--paper);font-family:var(--sans);font-size:.9rem;transition:border-color .2s;outline:none}
+        .fg input::placeholder{color:rgba(255,255,255,.2)}
+        .fg input:focus{border-color:var(--warm)}
+        .fg .opt{font-size:.65rem;color:rgba(255,255,255,.25);font-weight:400;text-transform:none;letter-spacing:0}
+        .fsub{width:100%;padding:14px;background:var(--warm);color:var(--ink);border:none;border-radius:7px;font-family:var(--sans);font-size:.92rem;font-weight:600;cursor:pointer;transition:background .2s;margin-top:6px}
+        .fsub:hover{background:var(--warm-dk);color:var(--paper)}
+        .fnote{text-align:center;margin-top:14px;font-size:.72rem;color:rgba(255,255,255,.28)}
+        .fok{display:none;text-align:center;padding:36px 0}
+        .fok h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:10px}
+        .fok p{color:rgba(255,255,255,.5);font-weight:300}
+
+        footer{background:var(--ink);color:rgba(255,255,255,.35);border-top:1px solid rgba(255,255,255,.06);padding:36px 32px;text-align:center;font-size:.78rem}
+        footer a{color:rgba(255,255,255,.5);text-decoration:none}footer a:hover{color:var(--paper)}
+        .fl{display:flex;gap:24px;justify-content:center;margin-bottom:12px}
+
+        .lb{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;cursor:zoom-out}
+        .lb.open{display:flex}
+        .lb img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+        .lb-x{position:absolute;top:24px;right:24px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+        .lb-x:hover{background:rgba(255,255,255,.2)}
+
+        .cbanner{display:none;max-width:600px;margin:0 auto 32px;padding:16px 20px;border-radius:10px;background:#fff3cd;border:1px solid #ffecb5;color:#664d03;font-size:.82rem;text-align:center;line-height:1.5}
+
+        @media(max-width:768px){
+            .nav-lnk{display:none}.mob-tog{display:block}
+            .nav-lnk.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--paper);padding:20px 32px;border-bottom:1px solid var(--border);gap:14px}
+            .stats-in{grid-template-columns:repeat(2,1fr);gap:20px}
+            .stat{border-right:none}.stat:nth-child(1),.stat:nth-child(2){padding-bottom:16px;border-bottom:1px solid var(--border)}
+            .pgrid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:4px}
+            .wgrid{grid-template-columns:1fr}.bstrip{grid-template-columns:1fr}
+            .frow{grid-template-columns:1fr}
+            section{padding:64px 20px}.hero{padding:120px 20px 64px}
+        }
+
+        .fade{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+        .fade.in{opacity:1;transform:translateY(0)}
+    </style>
+</head>
+<body>
+
+<nav id="navbar"><div class="nav-in">
+    <a href="#" class="nav-logo">Wint<span>.</span>Group</a>
+    <div class="nav-lnk" id="navLinks">
+        <a href="#catalog">Catalog</a><a href="#why">Why Us</a><a href="#brands">Brands</a>
+        <a href="#contact" class="nav-cta">Get Started</a>
+    </div>
+    <button class="mob-tog" id="mobTog" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<section class="hero"><div class="fade">
+    <div class="hero-ey">Wholesale for Boutiques</div>
+    <h1>Your Next Bestseller Is Already Made</h1>
+    <p>Browse hundreds of styles we manufacture in-house — dresses, blazers, co-ords, jumpsuits, suits & more. No minimum order quantity, delivered in 8–20 days with duties included.</p>
+    <div class="hero-btn">
+        <a href="#contact" class="btn btn-dk">Start Ordering →</a>
+        <a href="#catalog" class="btn btn-ol">Browse Catalog</a>
+    </div>
+</div></section>
+
+<div class="stats fade"><div class="stats-in">
+    <div class="stat"><div class="stat-v">0</div><div class="stat-l">Minimum Qty</div></div>
+    <div class="stat"><div class="stat-v">8–20</div><div class="stat-l">Day Delivery</div></div>
+    <div class="stat"><div class="stat-v">DDP</div><div class="stat-l">Duties Included</div></div>
+    <div class="stat"><div class="stat-v">Faire</div><div class="stat-l">Easy Ordering</div></div>
+</div></div>
+
+<section class="catalog" id="catalog">
+    <div class="sh fade"><h2>Full Catalog</h2><p>Every product below is manufactured in our facility. Images update automatically as we add new styles.</p></div>
+    <div class="cbanner" id="corsBanner">Some products couldn't be loaded due to browser restrictions. Visit our stores directly for the full catalog.</div>
+    <div class="fbar" id="filterBar"></div>
+    <div class="pgrid" id="productGrid"></div>
+    <div class="gload" id="gridLoading"><div class="sp"></div>Loading products from our stores...</div>
+    <div class="lmw" id="lmWrap" style="display:none"><button class="lmb" id="lmBtn">Show More</button></div>
+    <div class="pcount" id="pCount"></div>
+</section>
+
+<section id="why">
+    <div class="sh fade"><h2>Why Boutiques Choose Us</h2><p>We built wholesale around the problems boutique owners actually face.</p></div>
+    <div class="wgrid">
+        <div class="wcard fade"><div class="wi">📦</div><h3>No Minimum Order Quantity</h3><p>Order what sells, not what you're forced to buy. Just a minimum order value — test styles without sitting on excess inventory.</p></div>
+        <div class="wcard fade"><div class="wi">✈️</div><h3>8–20 Day Delivery</h3><p>From our production floor to your boutique in 8 to 20 days. Restock fast and keep your shelves fresh.</p></div>
+        <div class="wcard fade"><div class="wi">💰</div><h3>Duties & Taxes Included</h3><p>The price you see is the price you pay. No surprise customs charges, no hidden fees on delivery.</p></div>
+        <div class="wcard fade"><div class="wi">🛒</div><h3>Order Through Faire</h3><p>We're on Faire — get net-60 terms, free returns on first orders, and a purchasing flow you already know.</p></div>
+    </div>
+</section>
+
+<section class="bsec" id="brands">
+    <div class="sh fade"><h2>Powered by Our Production Line</h2><p>We run our own brands on the same line. The quality we put our name on is what you'll get.</p></div>
+    <div class="bstrip">
+        <div class="bcard fade"><h3>TaleThread</h3><div class="bt">Women's Fashion</div><p>Custom-fit dresses, blazers, co-ords and more — sizes 0 to 36W. Run by our co-owner Parul.</p><a href="https://talethread.com" target="_blank" rel="noopener">Visit Store →</a></div>
+        <div class="bcard fade"><h3>Indophilia</h3><div class="bt">Handloom & Artisan</div><p>Ikat, block print, indigo — wearable art blending Indian craftsmanship with modern silhouettes.</p><a href="https://indophilia.store" target="_blank" rel="noopener">Visit Store →</a></div>
+        <div class="bcard fade"><h3>Wintage</h3><div class="bt">Men's Fashion</div><p>Blazers, suits, nehru jackets and bandhgalas in linen, tweed, velvet and banarasi weaves.</p><a href="https://wintage.in" target="_blank" rel="noopener">Visit Store →</a></div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="sh fade"><h2>Ready to Stock Smarter?</h2><p>Drop your details and we'll get you started — or find us directly on Faire.</p></div>
+    <div class="fwrap fade">
+        <form id="leadForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="frow">
+                <div class="fg"><label>Your Name *</label><input type="text" name="name" placeholder="Jane Smith" required></div>
+                <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="jane@yourboutique.com" required></div>
+            </div>
+            <div class="frow">
+                <div class="fg"><label>Phone *</label><input type="tel" name="phone" placeholder="+1 (555) 000-0000" required></div>
+                <div class="fg"><label>Boutique Name *</label><input type="text" name="boutique" placeholder="Your Boutique" required></div>
+            </div>
+            <div class="frow">
+                <div class="fg"><label>Website <span class="opt">(optional)</span></label><input type="url" name="website" placeholder="https://yourboutique.com"></div>
+                <div class="fg"><label>Instagram <span class="opt">(optional)</span></label><input type="text" name="instagram" placeholder="@yourboutique"></div>
+            </div>
+            <button type="submit" class="fsub">Send My Details</button>
+            <div class="fnote">We'll reply within 24 hours. No spam, ever.</div>
+        </form>
+        <div class="fok" id="formOk"><h3>Thank you!</h3><p>We've received your details and will be in touch within 24 hours.</p></div>
+    </div>
+</section>
+
+<footer><div class="fl">
+    <a href="https://talethread.com" target="_blank">TaleThread</a>
+    <a href="https://indophilia.store" target="_blank">Indophilia</a>
+    <a href="https://wintage.in" target="_blank">Wintage</a>
+</div><p>&copy; 2026 Wint Group — Wintage Garments Pvt Ltd.</p></footer>
+
+<div class="lb" id="lb"><button class="lb-x" id="lbx">&times;</button><img id="lbi" src="" alt="Product detail"></div>
+
+<script>
+const STORES=[
+    {name:'TaleThread',domain:'talethread.com',brand:'tt'},
+    {name:'Indophilia',domain:'indophilia.store',brand:'ip'},
+    {name:'Wintage',domain:'wintage.in',brand:'wt'}
+];
+const CATS={
+    'Dresses':['dress','midi','maxi','mini','gown','frock','flare'],
+    'Blazers':['blazer','tuxedo'],
+    'Co-ords':['co-ord','coord','co ord','cord set','cordset'],
+    'Jumpsuits':['jumpsuit','jump suit'],
+    'Suits':['suit','2-piece','3-piece','2 piece','3 piece'],
+    'Jackets':['jacket','nehru','bandhgala','jodhpuri'],
+    'Tops':['top','shirt','blouse','waistcoat','vest'],
+    'Skirts':['skirt'],
+    'Kurtas':['kurta']
+};
+const BATCH=60;
+let all=[],filtered=[],shown=0,filter='All';
+
+async function fetchStore(s){
+    const prods=[];let pg=1;
+    while(true){
+        try{
+            const r=await fetch(`https://${s.domain}/products.json?limit=250&page=${pg}`);
+            if(!r.ok)throw new Error(r.status);
+            const d=await r.json();
+            if(!d.products||!d.products.length)break;
+            d.products.forEach(p=>{
+                if(p.images&&p.images.length)
+                    prods.push({
+                        title:p.title,
+                        img:p.images[0].src,
+                        brand:s.brand,
+                        brandName:s.name,
+                        type:p.product_type||'',
+                        tags:(p.tags||'').toLowerCase(),
+                        handle:p.handle
+                    });
+            });
+            if(d.products.length<250)break;
+            pg++;
+        }catch(e){
+            console.warn(`${s.domain} p${pg}:`,e);
+            if(pg===1)document.getElementById('corsBanner').style.display='block';
+            break;
+        }
+    }
+    return prods;
+}
+
+function catOf(p){
+    const t=`${p.title} ${p.type} ${p.tags}`.toLowerCase();
+    for(const[c,kw]of Object.entries(CATS))if(kw.some(k=>t.includes(k)))return c;
+    return 'Other';
+}
+
+function renderFilters(){
+    const ct={All:all.length};
+    all.forEach(p=>{ct[p.cat]=(ct[p.cat]||0)+1});
+    const bar=document.getElementById('filterBar');
+    bar.innerHTML='';
+    ['All',...Object.keys(CATS),'Other'].filter(c=>ct[c]).forEach(c=>{
+        const b=document.createElement('button');
+        b.className=`fbtn${c===filter?' on':''}`;
+        b.innerHTML=`${c}<span class="ct">${ct[c]}</span>`;
+        b.onclick=()=>setFilter(c);
+        bar.appendChild(b);
+    });
+}
+
+function setFilter(c){
+    filter=c;
+    filtered=c==='All'?[...all]:all.filter(p=>p.cat===c);
+    shown=0;
+    document.getElementById('productGrid').innerHTML='';
+    renderFilters();
+    showBatch();
+}
+
+function thumbUrl(src){
+    // Request a 400px wide version from Shopify CDN
+    return src.replace(/(\.[a-z]+)(\?|$)/i,'_400x$1$2');
+}
+
+function showBatch(){
+    const g=document.getElementById('productGrid');
+    const end=Math.min(shown+BATCH,filtered.length);
+    for(let i=shown;i<end;i++){
+        const p=filtered[i];
+        const d=document.createElement('div');
+        d.className='pcard';
+        d.innerHTML=`<img src="${thumbUrl(p.img)}" alt="${p.title}" loading="lazy" onerror="this.src='${p.img}'"><div class="ov"></div><span class="tg">${p.cat}</span><span class="bd ${p.brand}"></span>`;
+        d.addEventListener('click',()=>openLb(p.img));
+        g.appendChild(d);
+    }
+    shown=end;
+    const w=document.getElementById('lmWrap');
+    w.style.display=shown<filtered.length?'block':'none';
+    document.getElementById('pCount').textContent=`Showing ${shown} of ${filtered.length} products`;
+}
+
+// Lightbox
+function openLb(src){document.getElementById('lbi').src=src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
+function closeLb(){document.getElementById('lb').classList.remove('open');document.getElementById('lbi').src='';document.body.style.overflow=''}
+document.getElementById('lb').addEventListener('click',e=>{if(e.target!==document.getElementById('lbi'))closeLb()});
+document.getElementById('lbx').addEventListener('click',closeLb);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+
+// Init
+async function init(){
+    document.getElementById('gridLoading').style.display='block';
+    const res=await Promise.allSettled(STORES.map(fetchStore));
+    res.forEach(r=>{if(r.status==='fulfilled')all.push(...r.value)});
+    all.forEach(p=>{p.cat=catOf(p)});
+    // Shuffle for variety
+    for(let i=all.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[all[i],all[j]]=[all[j],all[i]]}
+    filtered=[...all];
+    document.getElementById('gridLoading').style.display='none';
+    if(!all.length){
+        document.getElementById('productGrid').innerHTML='<p style="text-align:center;color:var(--muted);grid-column:1/-1;padding:40px">Unable to load products. Visit our stores directly: <a href="https://talethread.com">TaleThread</a>, <a href="https://indophilia.store">Indophilia</a>, <a href="https://wintage.in">Wintage</a></p>';
+        return;
+    }
+    renderFilters();showBatch();
+}
+
+document.getElementById('lmBtn').addEventListener('click',showBatch);
+
+// Nav
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)});
+document.getElementById('mobTog').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+document.querySelectorAll('.nav-lnk a').forEach(a=>{a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'))});
+
+// Fade
+const fo=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.fade').forEach(el=>fo.observe(el));
+
+// Form
+document.getElementById('leadForm').addEventListener('submit',async e=>{
+    e.preventDefault();const f=e.target;
+    try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}});if(r.ok){f.style.display='none';document.getElementById('formOk').style.display='block'}}
+    catch{f.style.display='none';document.getElementById('formOk').style.display='block'}
+});
+
+init();
+</script>
+</body>
+</html>
