@@ -15,7 +15,7 @@ const CONFIG = {
 
   // ── LOGO ──────────────────────────────────────────────────────
   // Path to your logo image. Leave empty "" to show text "Wint.Group"
-  LOGO_URL: "",
+  LOGO_URL: "assets/logo.png",
 
   // ── HERO ──────────────────────────────────────────────────────
   HERO_HEADLINE: "Your Next Bestseller Is Already Made",
