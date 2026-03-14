@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wint Group — Wholesale Garments for Boutiques</title>
-    <link rel="icon" href="assets/favicon.png" type="image/png">
     <meta name="description" content="Wholesale dresses, blazers, co-ords, jumpsuits and more for boutiques. No MOQ, 8-20 day delivery, duties included.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -13,8 +13,8 @@
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
-            --ink:#111;--paper:#f8f7f4;--cream:#efece6;--warm:#e63228;
-            --warm-dk:#c4271e;--warm-lt:#dcc8a8;--muted:#8a8378;
+            --ink:#111;--paper:#f8f7f4;--cream:#efece6;--warm:#b8956a;
+            --warm-dk:#96754d;--warm-lt:#dcc8a8;--muted:#8a8378;
             --muted-lt:#b5aea5;--border:#ddd8cf;--white:#fff;
             --serif:'Playfair Display',Georgia,serif;
             --sans:'Sora',system-ui,sans-serif;
@@ -40,11 +40,11 @@
 
         /* ── HERO ── */
         .hero{padding:140px 28px 72px;text-align:center;position:relative;overflow:hidden}
-        .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.55);pointer-events:none}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,var(--warm-lt) 0%,transparent 55%);opacity:.22;pointer-events:none}
         .hero-ey{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--warm-dk);margin-bottom:18px}
         .hero-ey::before,.hero-ey::after{content:'';width:20px;height:1px;background:var(--warm)}
-        .hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.12;max-width:720px;margin:0 auto 18px;letter-spacing:-.02em;font-weight:500;color:#fff}
-        .hero p{font-size:1rem;color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 32px;line-height:1.75;font-weight:300}
+        .hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.12;max-width:720px;margin:0 auto 18px;letter-spacing:-.02em;font-weight:500}
+        .hero p{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 32px;line-height:1.75;font-weight:300}
         .btn{display:inline-flex;align-items:center;gap:6px;padding:13px 28px;border-radius:7px;font-family:var(--sans);font-size:.86rem;font-weight:500;text-decoration:none;transition:all .25s;cursor:pointer;border:none}
         .btn-dk{background:var(--ink);color:var(--paper)}
         .btn-dk:hover{background:#2a2a2a;transform:translateY(-1px)}
@@ -90,16 +90,19 @@
         .mens-wrap.open{max-height:4000px}
 
         /* ── FORM ── */
-        .form-sec{background:var(--ink);color:var(--paper)}
+        .form-sec{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+        .form-sec .bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.15;pointer-events:none}
         .form-sec .sh p{color:rgba(255,255,255,.45)}
         .form-sec .sh h2{color:var(--paper)}
-        .fwrap{max-width:500px;margin:0 auto}
+        .fwrap{max-width:500px;margin:0 auto;position:relative}
         .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
         .fg{margin-bottom:12px}
+        .fg.full{grid-column:1/-1}
         .fg label{display:block;font-size:.68rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;color:rgba(255,255,255,.35)}
-        .fg input{width:100%;padding:10px 13px;border-radius:7px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:var(--paper);font-family:var(--sans);font-size:.88rem;transition:border-color .2s;outline:none}
-        .fg input::placeholder{color:rgba(255,255,255,.18)}
-        .fg input:focus{border-color:var(--warm)}
+        .fg input,.fg textarea{width:100%;padding:10px 13px;border-radius:7px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:var(--paper);font-family:var(--sans);font-size:.88rem;transition:border-color .2s;outline:none}
+        .fg textarea{resize:vertical;min-height:60px}
+        .fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.18)}
+        .fg input:focus,.fg textarea:focus{border-color:var(--warm)}
         .fg .opt{font-size:.6rem;color:rgba(255,255,255,.2);font-weight:400;text-transform:none;letter-spacing:0}
         .fsub{width:100%;padding:13px;background:var(--warm);color:var(--ink);border:none;border-radius:7px;font-family:var(--sans);font-size:.9rem;font-weight:600;cursor:pointer;transition:background .2s;margin-top:4px}
         .fsub:hover{background:var(--warm-dk);color:var(--paper)}
@@ -117,7 +120,7 @@
         .wcard p{color:var(--muted);font-size:.82rem;line-height:1.6;font-weight:300}
 
         /* ── TRUST ── */
-        .trust{text-align:center;padding:40px 28px;color:var(--muted-lt);font-size:.82rem;letter-spacing:.04em}
+        .trust{text-align:center;padding:24px 28px;color:var(--muted-lt);font-size:.82rem;letter-spacing:.04em}
         .trust strong{color:var(--muted);font-weight:500}
 
         /* ── FOOTER ── */
@@ -182,7 +185,7 @@
     <p id="heroP"></p>
     <div class="hero-btn">
         <a href="#form" class="btn btn-dk" id="heroCta"></a>
-        <a href="#catalog" class="btn btn-ol">Browse Catalog ↓</a>
+        <a href="#catalog" class="btn btn-dk">Browse Catalog ↓</a>
     </div>
 </div></section>
 
@@ -192,6 +195,7 @@
 
 <!-- FORM -->
 <section class="form-sec sec-pad" id="form">
+    <div class="bg" id="formBg"></div>
     <div class="sh fade">
         <h2 id="formHeading">Like What You See?</h2>
         <p>Tell us about your boutique and we'll get you set up.</p>
@@ -210,6 +214,7 @@
                 <div class="fg"><label>Website <span class="opt">(optional)</span></label><input type="text" name="website" placeholder="yourboutique.com"></div>
                 <div class="fg"><label>Instagram <span class="opt">(optional)</span></label><input type="text" name="instagram" placeholder="@yourboutique"></div>
             </div>
+            <div class="fg full"><label>Comments <span class="opt">(optional)</span></label><textarea name="comments" placeholder="Tell us what you're looking for..." rows="3"></textarea></div>
             <button type="submit" class="fsub" id="formBtn"></button>
             <div class="fnote">We'll reply within 24 hours. No spam, ever.</div>
         </form>
@@ -219,12 +224,6 @@
 
 <!-- WOMEN'S SLIDERS (remaining) -->
 <div id="slidersWomenBottom"></div>
-
-<!-- CTA BANNER (scroll to form) -->
-<div class="cta-banner fade" id="ctaMid">
-    <p id="ctaMidText"></p>
-    <a href="#form" class="btn btn-dk" id="ctaMidBtn"></a>
-</div>
 
 <!-- MEN'S SECTION -->
 <div class="mens-toggle" id="mensToggle">
@@ -284,17 +283,9 @@ function trackEvent(name,data){if(typeof fbq==='function')fbq('track',name,data|
 // ── Populate from config ──
 document.getElementById('heroH').textContent=CONFIG.HERO_HEADLINE;
 document.getElementById('heroP').textContent=CONFIG.HERO_SUBTEXT;
-    if(CONFIG.HERO_IMAGE){
-    const hero=document.getElementById('hero');
-    hero.style.backgroundImage='url('+CONFIG.HERO_IMAGE+')';
-    hero.style.backgroundSize='cover';
-    hero.style.backgroundPosition='center';
-}
 document.getElementById('heroCta').textContent=CONFIG.CTA_HERO+' →';
 document.getElementById('navCta').textContent=CONFIG.CTA_HERO;
 document.getElementById('formBtn').textContent=CONFIG.CTA_FORM_SUBMIT;
-document.getElementById('ctaMidText').textContent=CONFIG.CTA_AFTER_FIRST_SLIDERS;
-document.getElementById('ctaMidBtn').textContent='Take Me to the Form →';
 document.getElementById('ctaFinalText').textContent=CONFIG.CTA_AFTER_ALL;
 document.getElementById('ctaFinalBtn').textContent='Express Interest →';
 document.getElementById('trustLine').innerHTML='<strong>'+CONFIG.TRUST_TEXT+'</strong>';
@@ -303,6 +294,11 @@ document.getElementById('trustLine').innerHTML='<strong>'+CONFIG.TRUST_TEXT+'</s
 if(CONFIG.LOGO_URL){
     const logo=document.getElementById('navLogo');
     logo.innerHTML='<img src="'+CONFIG.LOGO_URL+'" alt="Wint Group">';
+}
+
+// Form background image
+if(CONFIG.FORM_IMAGE){
+    document.getElementById('formBg').style.backgroundImage='url('+CONFIG.FORM_IMAGE+')';
 }
 
 // Why Us
