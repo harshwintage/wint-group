@@ -6,35 +6,27 @@
 const CONFIG = {
 
   // ── META PIXEL ────────────────────────────────────────────────
-  // Get this from Facebook Ads Manager → Events Manager → Pixel
   META_PIXEL_ID: "YOUR_PIXEL_ID",
 
   // ── FORM ENDPOINT ─────────────────────────────────────────────
-  // Google Apps Script Web App URL (see SETUP.md for instructions)
   FORM_ENDPOINT: "YOUR_GOOGLE_SCRIPT_URL",
 
   // ── LOGO ──────────────────────────────────────────────────────
-  // Path to your logo image. Leave empty "" to show text "Wint.Group"
-  LOGO_URL: "",
+  LOGO_URL: "assets/logo.png",
 
   // ── HERO ──────────────────────────────────────────────────────
   HERO_HEADLINE: "Your Next Bestseller Is Already Made",
   HERO_SUBTEXT: "We manufacture dresses, blazers, co-ords, jumpsuits, suits & more — and ship to boutiques worldwide with no minimum order quantity.",
-  // Hero background image (optional). Leave empty for gradient-only.
-  HERO_IMAGE: "",
+  HERO_IMAGE: "assets/hero.jpg",
 
-  // Form section background image (optional). Leave empty for solid dark.
+  // ── FORM BACKGROUND IMAGE (optional) ──────────────────────────
   FORM_IMAGE: "",
 
   // ── HOW MANY IMAGES PER SLIDER ────────────────────────────────
-  SLIDER_PREVIEW_COUNT: 10,    // images shown in the slider on main page
-  GRID_COLUMNS_MOBILE: 3,     // columns on the "View All" page (mobile)
+  SLIDER_PREVIEW_COUNT: 10,
+  GRID_COLUMNS_MOBILE: 3,
 
   // ── WOMEN'S SLIDERS (shown on page load) ──────────────────────
-  // Each slider: name (display), slug (URL), sources (Shopify collections)
-  // sources = array of "domain/collections/handle" strings
-  // Multiple sources get merged and shuffled automatically
-
   SLIDERS_WOMEN: [
     {
       name: "Boho Dresses",
@@ -110,7 +102,6 @@ const CONFIG = {
 
   // ── CTA BUTTON TEXTS ──────────────────────────────────────────
   CTA_HERO: "Get Started",
-  CTA_AFTER_FIRST_SLIDERS: "Like What You See? Let's Talk",
   CTA_AFTER_ALL: "Ready to Order?",
   CTA_FORM_SUBMIT: "Send My Details",
 
