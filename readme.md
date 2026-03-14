@@ -47,6 +47,7 @@ wint-group/
    - E1: `boutique`
    - F1: `website`
    - G1: `instagram`
+   - H1: `comments`
 
 ### Create the Apps Script
 1. In the sheet, go to **Extensions → Apps Script**
@@ -64,7 +65,8 @@ function doPost(e) {
     data.phone || '',
     data.boutique || '',
     data.website || '',
-    data.instagram || ''
+    data.instagram || '',
+    data.comments || ''
   ]);
   
   return ContentService
