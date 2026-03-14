@@ -284,6 +284,12 @@ function trackEvent(name,data){if(typeof fbq==='function')fbq('track',name,data|
 // ── Populate from config ──
 document.getElementById('heroH').textContent=CONFIG.HERO_HEADLINE;
 document.getElementById('heroP').textContent=CONFIG.HERO_SUBTEXT;
+    if(CONFIG.HERO_IMAGE){
+    const hero=document.getElementById('hero');
+    hero.style.backgroundImage='url('+CONFIG.HERO_IMAGE+')';
+    hero.style.backgroundSize='cover';
+    hero.style.backgroundPosition='center';
+}
 document.getElementById('heroCta').textContent=CONFIG.CTA_HERO+' →';
 document.getElementById('navCta').textContent=CONFIG.CTA_HERO;
 document.getElementById('formBtn').textContent=CONFIG.CTA_FORM_SUBMIT;
