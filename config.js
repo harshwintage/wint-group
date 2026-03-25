@@ -116,5 +116,6 @@ const CONFIG = {
     { label: "Faire Store", url: "http://indophilia.faire.com/" },
     { label: "Instagram", url: "http://instagram.com/wintagewholesale" },
     { label: "Facebook", url: "http://facebook.com/wintagewholesale" }
+    { label: "Privacy Policy", url: "/privacy.html" }
   ]
 };
