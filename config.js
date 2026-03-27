@@ -9,7 +9,7 @@ const CONFIG = {
   META_PIXEL_ID: "1597135191493446",
 
   // ── FORM ENDPOINT ─────────────────────────────────────────────
-  FORM_ENDPOINT: "https://script.google.com/macros/s/AKfycbztKFBX7cnF-d2ncBSFk3qY_3kuEk2nQxWJESA7KpzY6wUfZNAtHU_r0bT2lObYYH4/exec",
+  FORM_ENDPOINT: "https://script.google.com/macros/s/AKfycbyApscsw5qjMp2HaYFwVOhX8vGRJyJXNc-IL7qlF9sVcRUcaNNR4ZFzrxruP4MUe1FD/exec",
 
   // ── LOGO ──────────────────────────────────────────────────────
   LOGO_URL: "assets/logo.png",
